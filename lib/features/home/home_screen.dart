@@ -206,10 +206,25 @@ class _FeatureCards extends StatelessWidget {
     return IntrinsicHeight(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          Expanded(child: _DarkCard(title: 'feature_consultations_title', subtitle: 'feature_consultations_sub', icon: Icons.gavel)),
-          SizedBox(width: 10),
-          Expanded(child: _DarkCard(title: 'feature_articles_title', subtitle: 'feature_articles_sub', icon: Icons.menu_book)),
+        children: [
+          Expanded(
+            child: _DarkCard(
+              title: 'feature_consultations_title',
+              subtitle: 'feature_consultations_sub',
+              icon: Icons.gavel,
+              onTap: () {
+                Navigator.of(context).pushNamed(Routes.consultation);
+              },
+            ),
+          ),
+          const SizedBox(width: 10),
+          const Expanded(
+            child: _DarkCard(
+              title: 'feature_articles_title',
+              subtitle: 'feature_articles_sub',
+              icon: Icons.menu_book,
+            ),
+          ),
         ],
       ),
     );
@@ -220,15 +235,20 @@ class _DarkCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final IconData icon;
-  const _DarkCard({super.key, required this.title, required this.subtitle, required this.icon});
+  final VoidCallback? onTap;
+  const _DarkCard({super.key, required this.title, required this.subtitle, required this.icon, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('coming_soon'.tr())),
-        );
+        if (onTap != null) {
+          onTap!();
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('coming_soon'.tr())),
+          );
+        }
       },
       child: Container(
         padding: EdgeInsets.all(16.w),
