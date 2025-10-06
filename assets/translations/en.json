@@ -1,0 +1,36 @@
+{
+  "app_title": "Fahman",
+  "greeting_user": "Hello, {name}",
+  "assistant_name": "Fahman - ",
+  "assistant_tagline": "your smart legal guide ",
+  "inquiry_cta": "Start Inquiry",
+  "inquiry_banner_title": "Have a question about a specific case?",
+  "inquiry_banner_sub": "Ask 'Fahman' ... you'll get an instant answer",
+  "voice_cta_text": "Record your voice and ask Fahman",
+  "voice_result_title": "Case Inquiry",
+  "voice_result_empty": "No text captured from recording. Try again.",
+  "voice_result_inquiry": "Inquiry"
+  ,"voice_guidance": "Start your legal question and we'll guide you"
+  ,"mic_unavailable": "Microphone or speech recognition unavailable. Please grant permissions and try again."
+  ,"listening_in_progress": "Listening..."
+  ,"notifications": "Notifications"
+  ,"settings": "Settings"
+  ,"coming_soon": "Coming soon"
+  ,"feature_consultations_title": "Consultations"
+  ,"feature_consultations_sub": "Legal answers from specialized lawyers to solve your issues"
+  ,"feature_articles_title": "Legal articles and opinions"
+  ,"feature_articles_sub": "Articles and tips from specialized lawyers to help you"
+  ,"language_switch": "Switch language"
+  ,"consultation_explain_title": "Explain your legal case"
+  ,"consultation_pick_type": "Choose consultation"
+  ,"consultation_type_legal": "Legal"
+  ,"consultation_type_tax": "Tax"
+  ,"consultation_type_insurance": "Insurance"
+  ,"consultation_type_social": "Social Security"
+  ,"consultation_details_label": "Explain your request or inquiry briefly"
+  ,"consultation_details_hint": "Write any details related to your case here..."
+  ,"consultation_attachment_optional": "Add attachment (optional)"
+  ,"consultation_attachment_hint": "You can add contracts, photos or documents"
+  ,"consultation_confirmation": "I confirm I understand Fahman's services and agree"
+  ,"consultation_submit": "Submit consultation"
+}

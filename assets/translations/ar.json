@@ -1,0 +1,36 @@
+{
+  "app_title": "فهمان",
+  "greeting_user": ", مرحباً {name}",
+  "assistant_name": "فهمان - ",
+  "assistant_tagline": "دليلك القانوني الذكي ",
+  "inquiry_cta": "ابدأ الاستفسار",
+  "inquiry_banner_title": "عندك استفسار حول قضية معينة؟",
+  "inquiry_banner_sub": "اسأل \"فهمان\" ... وسيصلك الجواب فوراً",
+  "voice_cta_text": "سجّل صوتك واطرح استفسارك مع فهمان",
+  "voice_result_title": "استفسار عن القضية",
+  "voice_result_empty": "لم يتم التقاط نص من التسجيل. حاول مرة أخرى.",
+  "voice_result_inquiry": "استفسار"
+  ,"voice_guidance": "ابدأ بطرح سؤالك القانوني وسنرشدك خطوة بخطوة"
+  ,"mic_unavailable": "الميكروفون أو التعرف على الصوت غير متاح.\nالرجاء منح الأذونات للتطبيق ثم حاول مرة أخرى."
+  ,"listening_in_progress": "جاري الاستماع..."
+  ,"notifications": "الإشعارات"
+  ,"settings": "الإعدادات"
+  ,"coming_soon": "قريباً"
+  ,"feature_consultations_title": "الاستشارات"
+  ,"feature_consultations_sub": "إجابات قانونية من محامين مختصين لحل مشاكلك"
+  ,"feature_articles_title": "المقالات الآراء القانونية"
+  ,"feature_articles_sub": "مقالات ونصائح يقدمها محامون مختصون لمساعدتك"
+  ,"language_switch": "تبديل اللغة"
+  ,"consultation_explain_title": "اشرح حالتك القانونية"
+  ,"consultation_pick_type": "اختر الاستشارة"
+  ,"consultation_type_legal": "قانونية"
+  ,"consultation_type_tax": "ضريبية"
+  ,"consultation_type_insurance": "تامين"
+  ,"consultation_type_social": "ضمان اجتماعي"
+  ,"consultation_details_label": "اشرح عن طلبك أو استفسارك باختصار"
+  ,"consultation_details_hint": "اكتب أي تفاصيل متعلقة بقضيتك هنا..."
+  ,"consultation_attachment_optional": "إضافة مستند (اختياري)"
+  ,"consultation_attachment_hint": "يمكنك إضافة عقود، صور أو مستندات"
+  ,"consultation_confirmation": "أؤكد أني أفهم الخدمات التي يقدمها فهمان وأوافق"
+  ,"consultation_submit": "إرسال الاستشارة"
+}
