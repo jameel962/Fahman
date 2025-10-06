@@ -1,0 +1,122 @@
+{
+   "checksum": "e8c4910dfeadf809b06e99e2b8da31aa",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13329930355078655",
+            "date_last_used": "0",
+            "guid": "50e210b8-2a71-4ad0-bfd5-41ecf0e4fee6",
+            "id": "11",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Database Basics Made Easy",
+            "type": "url",
+            "url": "https://chat.openai.com/c/d6609a75-9b9b-4fb5-aa37-33f996cb07af"
+         }, {
+            "date_added": "13346689990798272",
+            "date_last_used": "0",
+            "guid": "d4d3e7d2-cdf9-4163-bb68-73a465fc09dc",
+            "id": "12",
+            "name": "Adobe Acrobat",
+            "type": "url",
+            "url": "https://acrobat.adobe.com/?x_api_client_id=bookmark&x_api_client_location=Reader"
+         } ],
+         "date_added": "13404143215964358",
+         "date_last_used": "0",
+         "date_modified": "13346689990798272",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13379962999604517",
+            "date_last_used": "0",
+            "guid": "3869558b-02b1-4fb5-98d7-aaa6f05276a7",
+            "id": "9",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Untitled",
+            "type": "url",
+            "url": "http://localhost:8888/notebooks/Untitled.ipynb"
+         }, {
+            "date_added": "13389350052425313",
+            "date_last_used": "0",
+            "guid": "408fb4b2-445e-4b17-9e8c-a62982f843fe",
+            "id": "10",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "ilovepdf_merged.pdf",
+            "type": "url",
+            "url": "file:///C:/Users/amoona/Downloads/ilovepdf_merged.pdf"
+         } ],
+         "date_added": "13404143215964358",
+         "date_last_used": "0",
+         "date_modified": "13389350052425313",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [ {
+            "date_added": "13362169570342482",
+            "date_last_used": "0",
+            "guid": "34862923-46a9-4bb8-9cfc-1fdcececa3d5",
+            "id": "5",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "From IT to OT, learn the latest technologies | OPSWAT Academy",
+            "type": "url",
+            "url": "https://learn.opswatacademy.com/certifications?utm_campaign=Academy%20-%20New%20Student%20Nurture&utm_medium=email&_hsenc=p2ANqtz-_4GiOUy-y9aB36r_ZlUORAn8pf3ZPywnvxyGzF7kOcUtBs1mpto7H1jAu1EoQgUUOQPU16bschxsWjLcf7IR2rk2i6Xg&_hsmi=236813682&utm_content=236813682&utm_source=hs_automation"
+         }, {
+            "date_added": "13371757926235264",
+            "date_last_used": "0",
+            "guid": "4f059b6a-47c2-486d-af6c-293cc8b322ed",
+            "id": "6",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "GitHub - AlexTheAnalyst/MySQL-YouTube-Series",
+            "type": "url",
+            "url": "https://github.com/AlexTheAnalyst/MySQL-YouTube-Series"
+         }, {
+            "date_added": "13378926531961612",
+            "date_last_used": "0",
+            "guid": "c5704655-b814-4e7e-bc20-22ac0a190b2f",
+            "id": "7",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Create a data analysis website that allows the user to enter a file of type (json, excel, csv) and the website performs a complete data cleaning, analysis, visualization and display of the data to the user. Use html, css, js, python, and sql if necessary, do not forget to use all the necessary python libraries and use ai to improve the process of data cleaning, analysis and visualization",
+            "type": "url",
+            "url": "https://www.blackbox.ai/chat/4lVb5cq"
+         }, {
+            "date_added": "13378927916818671",
+            "date_last_used": "0",
+            "guid": "dc483022-5eff-4848-9f92-bda1f7400f7c",
+            "id": "8",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Chat Blackbox: AI Code Generation, Code Chat, Code Search",
+            "type": "url",
+            "url": "https://www.blackbox.ai/"
+         } ],
+         "date_added": "13404143215964358",
+         "date_last_used": "0",
+         "date_modified": "13378927916818671",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CuABCr8BCIiBAhK4ASAAkgGjAQqgAQoOY2hyb21lX3N5bmNfYm0SBTUxIWJtGhIJSma/CmlABgARSma/CmlABgAiNAmE2akKaUAGABADGev0l92qT5vbIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEiNAmE2akKaUAGABADGev0l92qT5vbIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEptIK/CmlABgDqAQwI/NuJxwYQoOSblgESACoYVzNVUG8xOGJ0TCtZQVBtUFFXdzZ5QT09SAMS6wEIDBLmAQocTWNiak82VHRUVzJpSURrekVYb2d5Z2NjbFJnPRJmWjpBRHF0QVp3SzNWNFNneStQWWxKNlNVc1RRQ0ZpbUZSYlp2WlhZU0NQdnpqSjBibFQrS1J6MWlpK2x1bzYxRE9tVVU2K1FOVWI0bnNqSU53OXVpc2hleG14ejhmdzVscVhudz09GAAgACgAMP/bqIXKwIwDOLL7nqrgMkCy+56q4DJKHEdzc2ZBNjFxRmtEMlg3akxZNlg3WHkyYW40az1aHiIcd0Rad05rbUY4ZVlZUzJDaFhaTXV1Qm5UZEZZPWUAAAAAEusBCAsS5gEKHDJNMWZ6YW1UMEZsZHpldTJrM01NUEkxM3Vubz0SZlo6QURxdEFad0szVjRTZ3krUFlsSjZTVXNUUUNGaWVXYTBHZHdIbnN3Zm8rRFNUNlZBYWE1SXlVeUY4aTV4dU40SGdYd04vb2RDeUVtbzE0OTloRFlQd0tMd3AyMTd6SXBuN2c9PRgAIAAoADC/rLzan53/AjiHs7TohjFAh7O06IYxShxMUW9oK3MxQ1lVOVpPMEhBd20rSnBSdTV2MFE9Wh4iHGprMkN6T0lSTnZMYWYxV2puU3hRTXVVQUpLND1laRsi8xLsAQgKEucBChxOM1kwdkpwWE9KNERkSVZDTE9TZSswTjZ6QnM9EmZaOkFEcXRBWndLM1Y0U2d5K1BZbEo2U1VzVFFDRmk1Wk5Yd2FUSXFKQjNvc3VyZ2hTbE1jemc5TEN2dTI1RDJhU21YVjl4aUhBRmFYcWhXOTRLZHgxaHRDUEFBaDUxSTY2bm9nPT0YACAAKAAwz+jGqsvejAM4y/T2leQyQMv09pXkMkocU2VmT0NQZE40WUZkcE9CZ3B2aTN4V3ZBUERZPVofIh26QUJMTnFLaHcxT1ZVU1N0WnVwWU1jN2JXTG5jPWUAAAAAEusBCAkS5gEKHC84a29RSlVGTkVkMk1zY0tKR3VWRlkxdlpFbz0SZlo6QURxdEFad0szVjRTZ3krUFlsSjZTVXNUUUNGaUtLajRxOEt4ZHczdHZJeDFZTzk0aTdKRkVRSEd0WU1Udzd0OUcyRGNHL2dqbXUwSXBPZ3RYSytPZUM3cW9TbkNLdktsL1E9PRgAIAAoADDIy9Pwsc2KAzi11uqZwTJAtdbqmcEyShw2RTN6K2ZwMnRWOUtKQU81SnNVVnMyN0ZXVWM9Wh4iHHRIeDRtcFk0VFU4cHRuUGFkR09OaW5OLytVcz1lU0g6HhLDAQgCEr4BChxZY1NUb252RVNQd3FDczRMMmNyVmh2NjhMOTg9EmZaOkFEcXRBWnpqeTVTNlJOWVlNZ3ZFb2VZaFFNTDJTSCtxUWxTQWhZMGVlVmJScWltZUFvamcwRGNPaEFnQ0FpcmNPbkZ4WTZBV2MwSHVRRTdNbXpsMlo0WnRwd2ZHWGtFUll3PT0YACAAKAAwhLOn1ZCNkAM4AEAAShxvUFZraHdCUmJWNjVLQ1dSMitJT05IV29PdTg9WgBlAAAAABKrAQgBEqYBChx5eEovNmZ2a2VjcjdrcDVFUXpCNHRXTHBkYkU9Ek5aOkFEcXRBWnpRUGMzNW5xTFovZTV0eEdFbnNSRHFTNDd0S3JBcmhzZEloZHRhQlFvY0lnVW9kYkxuSVVLellzN3dmbE1IbDhEeUQyVm8YACAAKAAwhLOn1ZCNkAM4AEAAShxhUkNXTGdoRjliNUlucUtJRHZ1Si9qdlFrRmM9WgBlAAAAABLsAQgIEucBChxaQjMxNEVrRFlkTE4yVWNiWE1VMGtoNXp1SEU9EmZaOkFEcXRBWndLM1Y0U2d5K1BZbEo2U1VzVFFDRmlLYTF1WmRsOCs5ZXZCcnFBTWpBend1U0tjYWJHaE85TlN2MWJaYzk1TEdPWXhGZmNjb1hUTk0xaWU2VlFsSThMSndXWjNRPT0YACAAKAAwn46B7aGvigM4lZ6irL0yQJWeoqy9MkocS2pkcktOK3hiV3o4Vm8xRXlIL3BHVGQvMkRNPVofIh3sSjFqZEdUdGtQcWx5K2pTZ3V1KzRwZHlmenlBPWVN8QhPEusBCAUS5gEKHHc2bXBXSCtUeXFtcUpDb0J6UVEybmQvcVBUOD0SZlo6QURxdEFad0szVjRTZ3krUFlsSjZTVXNUUUNGaVlaMC9QYjdzOEtFRkFZTkR2T0c2MHVqK2tPNTN6MGtSSlV6RWZhcHBmYnNJOGtFL0QrVW9GT0RoS0dWWnB1ZWlrTkRSSmc9PRgAIAAoADCn1oCSxMeGAzir+KH1/jFAq/ih9f4xShxENkF0ZGlBTFlLdGNGUW9nbGJQMk5YdDZXbFk9Wh4iHGdkQVRNdkg2U0VQd1FlZlpzTXdSR0ZkdmRoVT1lAAAAABLsAQgHEucBChxWL1dqWHBXQWZSb1NVOWg1L1h2Z05ZdUxVa009EmZaOkFEcXRBWndLM1Y0U2d5K1BZbEo2U1VzVFFDRmk5aGtKNHZMWmRDeXRHU2JNYkFEbGZQNll4MUZCRWd4bWVkeTljSEI5SThLamRyRFBidWRMYndwQ0NkSXZLNDVOS1lUdEVRPT0YACAAKAAwnIPn2JyvigM4+trNq70yQPrazau9MkocTTJWeE5QT2dWU09vbVVZbnpDb1JTZ0VCNmZrPVofIh3ZaVJwd0R1Mi9OanpXWXkvdERwVGRMMXBSa1hBPWVN8QhPEuwBCAYS5wEKHEFMT1J5RUZMQjRkN2ZPQUU1YVZ0UnB5Rm1hND0SZlo6QURxdEFad0szVjRTZ3krUFlsSjZTVXNUUUNGaTcxeFk3ZXg4bFdjL2wxSUxLTWdqMEN1NUFTTDNTb3MvMXJMaXhoUHUwcFMyaUN6UHd4cWlIc1NHckdUWm9JSjhkRjRBS1E9PRgAIAAoADCUkoPzy96IAzji3qzRojJA4t6s0aIyShxsUHByNWlUbmt3ZHJEV1FrelBpajBSQTF1Z1U9Wh8iHbMvOWMzWnB3MVZWMTVDSjZyc3lSQTZrcTMycTg9Zb11uSISwwEIAxK+AQocbmpnRHU4OGVDcnZYcDg2cEQ3ZkhHY3FGcDg4PRJmWjpBRHF0QVp5a1hiT2dZRjA3Wnh1d0lDdEJiSGRldHpkbWFCa2Z4YjBUbHBMYzVra0VuUDdGRWtDQmV3eEtMZENLY08rRzZYOTFXdUVUeVdqdTNVVlFJQnFnSEl4R2pmdnh2QT09GAAgACgAMISzp9WQjZADOABAAEoceXpOQjAxY241NEE3Y1JVMHVUKy9QZ21UdFVvPVoAZQAAAAAwATgA",
+   "version": 1
+}
