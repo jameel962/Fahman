@@ -1,0 +1,1 @@
+This directory contains authentication UI screens after restructuring.

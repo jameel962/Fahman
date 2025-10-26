@@ -49,6 +49,9 @@ dependencies:
   google_fonts: ^6.1.0
   speech_to_text: ^7.3.0
   permission_handler: ^12.0.1
+  file_selector: ^1.0.4
+  flutter_bloc: ^8.1.6
+  http_parser: ^4.0.2
 
 
 dev_dependencies:
@@ -72,10 +75,15 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  
+  # Easy Localization configuration
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/avatar/
+    - assets/data/
     - assets/translations/
     
   # An image asset can refer to one or more resolution-specific "variants", see

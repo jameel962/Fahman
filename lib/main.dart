@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fahman_app/generated/codegen_loader.g.dart';
 import 'fahman_app.dart';
 
 Future<void> main() async {
@@ -13,6 +14,8 @@ Future<void> main() async {
       fallbackLocale: const Locale('ar'),
       startLocale: const Locale('ar'),
       useOnlyLangCode: true,
+      useFallbackTranslations: true,
+      assetLoader: const CodegenLoader(),
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
         minTextAdapt: true,

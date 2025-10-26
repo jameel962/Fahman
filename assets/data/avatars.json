@@ -1,0 +1,352 @@
+{
+    "avatars": [
+        {
+            "id": 1,
+            "path": "assets/images/avatar/avatar_1.png",
+            "name": "أفاتار 1",
+            "category": "default"
+        },
+        {
+            "id": 2,
+            "path": "assets/images/avatar/avatar_2.png",
+            "name": "أفاتار 2",
+            "category": "default"
+        },
+        {
+            "id": 3,
+            "path": "assets/images/avatar/avatar_3.png",
+            "name": "أفاتار 3",
+            "category": "default"
+        },
+        {
+            "id": 4,
+            "path": "assets/images/avatar/avatar_4.png",
+            "name": "أفاتار 4",
+            "category": "default"
+        },
+        {
+            "id": 5,
+            "path": "assets/images/avatar/avatar_5.png",
+            "name": "أفاتار 5",
+            "category": "default"
+        },
+        {
+            "id": 6,
+            "path": "assets/images/avatar/avatar_6.png",
+            "name": "أفاتار 6",
+            "category": "default"
+        },
+        {
+            "id": 7,
+            "path": "assets/images/avatar/avatar_7.png",
+            "name": "أفاتار 7",
+            "category": "default"
+        },
+        {
+            "id": 8,
+            "path": "assets/images/avatar/avatar_8.png",
+            "name": "أفاتار 8",
+            "category": "default"
+        },
+        {
+            "id": 9,
+            "path": "assets/images/avatar/avatar_9.png",
+            "name": "أفاتار 9",
+            "category": "default"
+        },
+        {
+            "id": 10,
+            "path": "assets/images/avatar/avatar_10.png",
+            "name": "أفاتار 10",
+            "category": "default"
+        },
+        {
+            "id": 11,
+            "path": "assets/images/avatar/avatar_11.png",
+            "name": "أفاتار 11",
+            "category": "default"
+        },
+        {
+            "id": 12,
+            "path": "assets/images/avatar/avatar_12.png",
+            "name": "أفاتار 12",
+            "category": "default"
+        },
+        {
+            "id": 13,
+            "path": "assets/images/avatar/avatar_13.png",
+            "name": "أفاتار 13",
+            "category": "default"
+        },
+        {
+            "id": 14,
+            "path": "assets/images/avatar/avatar_14.png",
+            "name": "أفاتار 14",
+            "category": "default"
+        },
+        {
+            "id": 15,
+            "path": "assets/images/avatar/avatar_15.png",
+            "name": "أفاتار 15",
+            "category": "default"
+        },
+        {
+            "id": 16,
+            "path": "assets/images/avatar/avatar_16.png",
+            "name": "أفاتار 16",
+            "category": "default"
+        },
+        {
+            "id": 17,
+            "path": "assets/images/avatar/avatar_17.png",
+            "name": "أفاتار 17",
+            "category": "default"
+        },
+        {
+            "id": 18,
+            "path": "assets/images/avatar/avatar_18.png",
+            "name": "أفاتار 18",
+            "category": "default"
+        },
+        {
+            "id": 19,
+            "path": "assets/images/avatar/avatar_19.png",
+            "name": "أفاتار 19",
+            "category": "default"
+        },
+        {
+            "id": 20,
+            "path": "assets/images/avatar/avatar_20.png",
+            "name": "أفاتار 20",
+            "category": "default"
+        },
+        {
+            "id": 21,
+            "path": "assets/images/avatar/avatar_21.png",
+            "name": "أفاتار 21",
+            "category": "default"
+        },
+        {
+            "id": 22,
+            "path": "assets/images/avatar/avatar_22.png",
+            "name": "أفاتار 22",
+            "category": "default"
+        },
+        {
+            "id": 23,
+            "path": "assets/images/avatar/avatar_23.png",
+            "name": "أفاتار 23",
+            "category": "default"
+        },
+        {
+            "id": 24,
+            "path": "assets/images/avatar/avatar_24.png",
+            "name": "أفاتار 24",
+            "category": "default"
+        },
+        {
+            "id": 25,
+            "path": "assets/images/avatar/avatar_25.png",
+            "name": "أفاتار 25",
+            "category": "default"
+        },
+        {
+            "id": 26,
+            "path": "assets/images/avatar/avatar_26.png",
+            "name": "أفاتار 26",
+            "category": "default"
+        },
+        {
+            "id": 27,
+            "path": "assets/images/avatar/avatar_27.png",
+            "name": "أفاتار 27",
+            "category": "default"
+        },
+        {
+            "id": 28,
+            "path": "assets/images/avatar/avatar_28.png",
+            "name": "أفاتار 28",
+            "category": "default"
+        },
+        {
+            "id": 29,
+            "path": "assets/images/avatar/avatar_29.png",
+            "name": "أفاتار 29",
+            "category": "default"
+        },
+        {
+            "id": 30,
+            "path": "assets/images/avatar/avatar_30.png",
+            "name": "أفاتار 30",
+            "category": "default"
+        },
+        {
+            "id": 31,
+            "path": "assets/images/avatar/avatar_31.png",
+            "name": "أفاتار 31",
+            "category": "default"
+        },
+        {
+            "id": 32,
+            "path": "assets/images/avatar/avatar_32.png",
+            "name": "أفاتار 32",
+            "category": "default"
+        },
+        {
+            "id": 33,
+            "path": "assets/images/avatar/avatar_33.png",
+            "name": "أفاتار 33",
+            "category": "default"
+        },
+        {
+            "id": 34,
+            "path": "assets/images/avatar/avatar_34.png",
+            "name": "أفاتار 34",
+            "category": "default"
+        },
+        {
+            "id": 35,
+            "path": "assets/images/avatar/avatar_35.png",
+            "name": "أفاتار 35",
+            "category": "default"
+        },
+        {
+            "id": 36,
+            "path": "assets/images/avatar/avatar_36.png",
+            "name": "أفاتار 36",
+            "category": "default"
+        },
+        {
+            "id": 37,
+            "path": "assets/images/avatar/avatar_37.png",
+            "name": "أفاتار 37",
+            "category": "default"
+        },
+        {
+            "id": 38,
+            "path": "assets/images/avatar/avatar_38.png",
+            "name": "أفاتار 38",
+            "category": "default"
+        },
+        {
+            "id": 39,
+            "path": "assets/images/avatar/avatar_39.png",
+            "name": "أفاتار 39",
+            "category": "default"
+        },
+        {
+            "id": 40,
+            "path": "assets/images/avatar/avatar_40.png",
+            "name": "أفاتار 40",
+            "category": "default"
+        },
+        {
+            "id": 41,
+            "path": "assets/images/avatar/avatar_41.png",
+            "name": "أفاتار 41",
+            "category": "default"
+        },
+        {
+            "id": 42,
+            "path": "assets/images/avatar/avatar_42.png",
+            "name": "أفاتار 42",
+            "category": "default"
+        },
+        {
+            "id": 43,
+            "path": "assets/images/avatar/avatar_43.png",
+            "name": "أفاتار 43",
+            "category": "default"
+        },
+        {
+            "id": 44,
+            "path": "assets/images/avatar/avatar_44.png",
+            "name": "أفاتار 44",
+            "category": "default"
+        },
+        {
+            "id": 45,
+            "path": "assets/images/avatar/avatar_45.png",
+            "name": "أفاتار 45",
+            "category": "default"
+        },
+        {
+            "id": 46,
+            "path": "assets/images/avatar/avatar_46.png",
+            "name": "أفاتار 46",
+            "category": "default"
+        },
+        {
+            "id": 47,
+            "path": "assets/images/avatar/avatar_47.png",
+            "name": "أفاتار 47",
+            "category": "default"
+        },
+        {
+            "id": 48,
+            "path": "assets/images/avatar/avatar_48.png",
+            "name": "أفاتار 48",
+            "category": "default"
+        },
+        {
+            "id": 49,
+            "path": "assets/images/avatar/avatar_49.png",
+            "name": "أفاتار 49",
+            "category": "default"
+        },
+        {
+            "id": 50,
+            "path": "assets/images/avatar/avatar_50.png",
+            "name": "أفاتار 50",
+            "category": "default"
+        },
+        {
+            "id": 51,
+            "path": "assets/images/avatar/avatar_51.png",
+            "name": "أفاتار 51",
+            "category": "default"
+        },
+        {
+            "id": 52,
+            "path": "assets/images/avatar/avatar_52.png",
+            "name": "أفاتار 52",
+            "category": "default"
+        },
+        {
+            "id": 53,
+            "path": "assets/images/avatar/avatar_53.png",
+            "name": "أفاتار 53",
+            "category": "default"
+        },
+        {
+            "id": 54,
+            "path": "assets/images/avatar/avatar_54.png",
+            "name": "أفاتار 54",
+            "category": "default"
+        },
+        {
+            "id": 55,
+            "path": "assets/images/avatar/avatar_55.png",
+            "name": "أفاتار 55",
+            "category": "default"
+        },
+        {
+            "id": 56,
+            "path": "assets/images/avatar/avatar_56.png",
+            "name": "أفاتار 56",
+            "category": "default"
+        },
+        {
+            "id": 57,
+            "path": "assets/images/avatar/avatar_57.png",
+            "name": "أفاتار 57",
+            "category": "default"
+        },
+        {
+            "id": 58,
+            "path": "assets/images/avatar/avatar_58.png",
+            "name": "أفاتار 58",
+            "category": "default"
+        }
+    ]
+}
