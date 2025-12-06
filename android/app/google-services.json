@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "452105787522",
+    "project_id": "fahman-25241",
+    "storage_bucket": "fahman-25241.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452105787522:android:d22002e2a9e13d6e6cfc9b",
+        "android_client_info": {
+          "package_name": "com.example.fahman_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjEKCrgVe8Nmr5h5HEH4UGbvL7v_6Yi9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

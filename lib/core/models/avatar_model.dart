@@ -2,29 +2,23 @@
 class AvatarModel {
   final int id;
   final String path;
-  final String name;
-  final String category;
 
-  const AvatarModel({
-    required this.id,
-    required this.path,
-    required this.name,
-    required this.category,
-  });
+  const AvatarModel({required this.id, required this.path});
 
   /// إنشاء نموذج من JSON
   factory AvatarModel.fromJson(Map<String, dynamic> json) {
+    final dynamicPath = json['path'] ?? json['avatarUrl'] ?? json['url'];
     return AvatarModel(
-      id: json['id'] as int,
-      path: json['path'] as String,
-      name: json['name'] as String,
-      category: json['category'] as String,
+      id: json['id'] is int
+          ? json['id'] as int
+          : int.parse(json['id'].toString()),
+      path: dynamicPath?.toString() ?? '',
     );
   }
 
   /// تحويل النموذج إلى JSON
   Map<String, dynamic> toJson() {
-    return {'id': id, 'path': path, 'name': name, 'category': category};
+    return {'id': id, 'path': path};
   }
 
   @override

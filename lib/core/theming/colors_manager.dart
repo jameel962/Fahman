@@ -16,10 +16,10 @@ class AppColors {
     800: Color(0xFF9852DA), // 800
     900: Color(0xFF6955FD), // 900
   });
-
   static const int _brandPrimary = 0xFFA099FF; // seed from 600
 
   // Direct access helpers (purple)
+
   static const Color brand900 = Color(0xFF6955FD);
   static const Color brand800 = Color(0xFF9852DA);
   static const Color brand700 = Color(0xFFB850C1);
@@ -47,11 +47,24 @@ class AppColors {
   // Accent mauve for highlighted text mapped to brand800
   static const Color accentMauve = brand800;
 
-  // App gradient (soft black, not too dark)
+  // App gradient (dark blue/purple gradient like the screenshots)
   static const List<Color> appGradient = [
-    Color(0xFF141414),
-    Color(0xFF1E1E1E),
-    Color(0xFF232325),
+    Color(0xFF1a1a2e), // Dark navy blue top
+    Color(0xFF16213e), // Deep blue middle
+    Color(0xFF0f1419), // Almost black bottom
+  ];
+
+  // Alternative gradients for different screens
+  static const List<Color> darkGradient = [
+    Color(0xFF0f0f0f),
+    Color(0xFF1a1a1a),
+    Color(0xFF121212),
+  ];
+
+  static const List<Color> blueGradient = [
+    Color(0xFF1e3a5f), // Deep blue
+    Color(0xFF1a2942), // Navy
+    Color(0xFF0f1419), // Dark
   ];
 
   // Purple gradient for inquiry banner (brand tones)
@@ -62,8 +75,10 @@ class AppColors {
   ];
 
   // Voice pill gradient using brand tones
-  static const List<Color> voicePillGradient = [
-    brand900,
-    brand700,
-  ];
+  static const List<Color> voicePillGradient = [brand900, brand700];
+
+  // Card/Container backgrounds for dark theme
+  static const Color cardBackground = Color(0xFF1a1a2e);
+  static const Color inputFieldBackground = Color(0xFF0d0d1a);
+  static const Color inputFieldBorder = Color(0xFF2a2a4e);
 }

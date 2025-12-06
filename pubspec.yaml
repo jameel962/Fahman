@@ -39,7 +39,7 @@ dependencies:
   # localization
   easy_localization: ^3.0.5
   # state management
-  provider: ^6.0.5
+
   # networking
   dio: ^5.9.0
   retrofit: ^4.7.2
@@ -52,6 +52,15 @@ dependencies:
   file_selector: ^1.0.4
   flutter_bloc: ^8.1.6
   http_parser: ^4.0.2
+  bloc: ^8.1.4
+  equatable: ^2.0.7
+  logger: ^1.1.0
+  flutter_launcher_icons: ^0.14.4
+  shared_preferences: ^2.2.2
+  # Firebase
+  firebase_core: ^3.8.1
+  firebase_messaging: ^15.1.5
+  flutter_local_notifications: ^18.0.1
 
 
 dev_dependencies:
@@ -64,6 +73,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
+  # For Android adaptive icon: background can be a color or an image.
+  adaptive_icon_background: "#000000"            # black background
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -82,7 +97,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/images/avatar/
     - assets/data/
     - assets/translations/
     

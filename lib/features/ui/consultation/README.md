@@ -1,1 +1,0 @@
-This directory contains consultation feature UI screens and form after restructuring.

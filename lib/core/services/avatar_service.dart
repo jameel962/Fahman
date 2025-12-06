@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'package:flutter/services.dart';
 import '../models/avatar_model.dart';
 
 /// خدمة إدارة الأفاتارات
@@ -13,17 +11,10 @@ class AvatarService {
     }
 
     try {
-      final String jsonString = await rootBundle.loadString(
-        'assets/data/avatars.json',
-      );
-      final Map<String, dynamic> jsonData = json.decode(jsonString);
-      final List<dynamic> avatarsJson = jsonData['avatars'] as List<dynamic>;
-
-      _cachedAvatars = avatarsJson
-          .map((json) => AvatarModel.fromJson(json as Map<String, dynamic>))
-          .toList();
-
-      return _cachedAvatars!;
+      // Local avatars were removed from assets. Keep method safe by returning
+      // an empty list instead of throwing when the JSON or asset files are
+      // missing. The app should rely on remote avatar URLs from the API.
+      return [];
     } catch (e) {
       // في حالة الخطأ، إرجاع قائمة فارغة
       return [];
@@ -40,10 +31,14 @@ class AvatarService {
     }
   }
 
-  /// جلب أفاتارات حسب الفئة
-  static Future<List<AvatarModel>> getAvatarsByCategory(String category) async {
+  /// Resolve an avatar by its asset path (exact match on AvatarModel.path)
+  static Future<AvatarModel?> getAvatarByPath(String path) async {
     final avatars = await getAvatars();
-    return avatars.where((avatar) => avatar.category == category).toList();
+    try {
+      return avatars.firstWhere((avatar) => avatar.path == path);
+    } catch (e) {
+      return null;
+    }
   }
 
   /// مسح التخزين المؤقت

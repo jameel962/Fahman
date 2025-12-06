@@ -1,9 +1,13 @@
+import 'package:fahman_app/features/complete_profile/data/complete_profile_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fahman_app/shared/widgets/shared_ui_widgets.dart';
+import 'package:fahman_app/core/shared/widgets/shared_ui_widgets.dart';
 import 'package:fahman_app/core/theming/colors_manager.dart';
 import 'package:fahman_app/core/services/avatar_service.dart';
 import 'package:fahman_app/core/models/avatar_model.dart';
+import 'package:dio/dio.dart';
+import 'package:fahman_app/core/networking/api/api_interceptors.dart';
+import 'package:fahman_app/core/networking/api/dio_consumer.dart';
 
 /// Widget for selecting avatar from available images
 class AvatarSelectionWidget extends StatefulWidget {
@@ -11,6 +15,7 @@ class AvatarSelectionWidget extends StatefulWidget {
   final Function(String) onAvatarSelected;
   final double? avatarSize;
   final int? crossAxisCount;
+  final bool useRemote;
 
   const AvatarSelectionWidget({
     super.key,
@@ -18,6 +23,7 @@ class AvatarSelectionWidget extends StatefulWidget {
     required this.onAvatarSelected,
     this.avatarSize,
     this.crossAxisCount,
+    this.useRemote = false,
   });
 
   @override
@@ -39,6 +45,38 @@ class _AvatarSelectionWidgetState extends State<AvatarSelectionWidget> {
   /// تحميل الأفاتارات من الخدمة
   Future<void> _loadAvatars() async {
     try {
+      if (widget.useRemote) {
+        try {
+          // Lazily create Dio + ApiInterceptor to call repository endpoint
+          final dio = Dio();
+          dio.interceptors.add(ApiInterceptor());
+          final repo = CompleteProfileRepository(
+            apiConsumer: DioConsumer(dio: dio),
+          );
+          final remote = await repo.getAllAvatarsRemote();
+          List<AvatarModel> parsed = [];
+          if (remote is Map && remote['avatars'] is List) {
+            parsed = (remote['avatars'] as List)
+                .map((e) => AvatarModel.fromJson(Map<String, dynamic>.from(e)))
+                .toList();
+          } else if (remote is List) {
+            parsed = remote
+                .map((e) => AvatarModel.fromJson(Map<String, dynamic>.from(e)))
+                .toList();
+          }
+
+          if (parsed.isNotEmpty) {
+            setState(() {
+              _avatars = parsed;
+              _isLoading = false;
+            });
+            return;
+          }
+        } catch (_) {
+          // fall through to local avatars
+        }
+      }
+
       final avatars = await AvatarService.getAvatars();
       setState(() {
         _avatars = avatars;
@@ -115,20 +153,35 @@ class _AvatarSelectionWidgetState extends State<AvatarSelectionWidget> {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12.r),
-                      child: Image.asset(
-                        avatar.path,
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Container(
-                            color: Colors.grey.withOpacity(0.3),
-                            child: Icon(
-                              Icons.person,
-                              color: Colors.white70,
-                              size: 24.sp,
+                      child: avatar.path.startsWith('http')
+                          ? Image.network(
+                              avatar.path,
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) {
+                                return Container(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  child: Icon(
+                                    Icons.person,
+                                    color: Colors.white70,
+                                    size: 24.sp,
+                                  ),
+                                );
+                              },
+                            )
+                          : Image.asset(
+                              avatar.path,
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) {
+                                return Container(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  child: Icon(
+                                    Icons.person,
+                                    color: Colors.white70,
+                                    size: 24.sp,
+                                  ),
+                                );
+                              },
                             ),
-                          );
-                        },
-                      ),
                     ),
                   ),
                 );

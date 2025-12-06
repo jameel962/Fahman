@@ -1,1 +1,0 @@
-This directory contains home feature UI screens after restructuring.
