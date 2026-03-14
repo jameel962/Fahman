@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Fahman App</string>
+	<string>YallaAlia</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -45,11 +45,32 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-    <!-- Microphone usage for speech recognition -->
-    <key>NSMicrophoneUsageDescription</key>
-    <string>نحتاج الوصول إلى الميكروفون لتسجيل سؤالك الصوتي.</string>
-    <!-- Speech recognition usage -->
-    <key>NSSpeechRecognitionUsageDescription</key>
-    <string>نحتاج التعرف على الكلام لتحويل حديثك إلى نص.</string>
+
+	<!-- Push Notifications Background Modes -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+
+	<!-- Firebase: Disable method swizzling for manual FCM handling -->
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+
+	<!-- Microphone usage for speech recognition -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>نحتاج الوصول إلى الميكروفون لتسجيل سؤالك الصوتي.</string>
+
+	<!-- Speech recognition usage -->
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>نحتاج التعرف على الكلام لتحويل حديثك إلى نص.</string>
+
+	<!-- Photo Library usage (for selecting images/files) -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>نحتاج الوصول إلى مكتبة الصور لاختيار الملفات.</string>
+
+	<!-- Camera usage -->
+	<key>NSCameraUsageDescription</key>
+	<string>نحتاج الوصول إلى الكاميرا لالتقاط الصور.</string>
 </dict>
 </plist>
