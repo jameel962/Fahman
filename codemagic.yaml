@@ -5,20 +5,32 @@ workflows:
     instance_type: mac_mini_m2
 
     integrations:
-      app_store_connect: Fahman  # must match the API key name in Codemagic dashboard
+      app_store_connect: Fahman  # name of your API key in Codemagic
 
     environment:
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.fahman.fahman
       vars:
         BUNDLE_ID: "com.fahman.fahman"
-        APP_STORE_APPLE_ID: "6760599317"  # e.g. 6743821905 — found in App Store Connect → App → General → Apple ID
+        APP_STORE_APPLE_ID: "T376AXB45S"  # find this in App Store Connect → App → General → Apple ID
       flutter: stable
       xcode: latest
       cocoapods: default
 
     scripts:
+      - name: Set up keychain
+        script: keychain initialize
+
+      - name: Fetch signing files and CREATE if missing
+        script: |
+          app-store-connect fetch-signing-files "com.fahman.fahman" \
+            --type IOS_APP_STORE \
+            --create
+
+      - name: Add certificates to keychain
+        script: keychain add-certificates
+
+      - name: Set Xcode to use profiles
+        script: xcode-project use-profiles
+
       - name: Get Flutter packages
         script: flutter pub get
 
@@ -31,19 +43,17 @@ workflows:
           BUILD_NUMBER=$(($(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID") + 1))
           flutter build ipa --release \
             --build-name=1.0.$BUILD_NUMBER \
-            --build-number=$BUILD_NUMBER \
-            --export-options-plist=/Users/builder/export_options.plist
+            --build-number=$BUILD_NUMBER
 
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
-      - flutter_drive.log
 
     publishing:
       app_store_connect:
         auth: integration
-        submit_to_testflight: true
-        submit_to_app_store: false  # keep false until TestFlight is working first
+        submit_to_testflight: true   # change to false if you want manual TestFlight
+        submit_to_app_store: true   # change to true to auto-submit for App Store review
       email:
         recipients:
           - Jameelalameer4@gmail.com
