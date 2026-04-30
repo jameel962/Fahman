@@ -1,4 +1,4 @@
-package com.example.fahman_app
+package com.fahman.fahman
 
 import io.flutter.embedding.android.FlutterActivity
 

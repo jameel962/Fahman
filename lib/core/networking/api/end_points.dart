@@ -1,9 +1,7 @@
 class EndPoints {
-  // Base (use only if you need full url helpers)
-  static const String baseUrl = 'http://fahman.net/';
+  static const String baseUrl = 'https://fahman.net/';
   // static const String baseUrl = 'http://fahmaan.runasp.net/';
-
-  // Auth
+// 70r1X0Xf%l#A
   static const String login = '/Auth/login';
   static const String logout = '/Auth/logout/{refreshToken}';
   static const String registerCustomer = '/Auth/register/customer';

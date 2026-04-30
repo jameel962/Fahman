@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fahman_app">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.fahman.fahman">
     <!-- Microphone permission for speech recognition -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- Notification permission for Android 13+ -->
@@ -7,14 +8,20 @@
     <!-- Network permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- Storage / media permissions -->
-    <!-- Android 13+ (API 33+) separate media permissions -->
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-    <!-- Older Android versions: external storage read/write -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- WRITE_EXTERNAL_STORAGE is deprecated on newer Android; limit to legacy SDKs -->
+    
+    <!-- Storage permissions (Google Play compliant) -->
+    <!-- For File Picker on Android 13+, system uses DocumentsProvider (no broad media permission needed) -->
+    <!-- Removed READ_MEDIA_IMAGES, READ_MEDIA_AUDIO, READ_MEDIA_VIDEO for Google Play compliance -->
+    <!-- These are explicitly removed to prevent hidden libraries from injecting them -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" tools:node="remove" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" tools:node="remove" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" tools:node="remove" />
+    
+    <!-- Older Android versions (pre-Android 13): external storage read access only -->
+    <!-- Limit to API 32 and below; Android 13+ uses system file picker without this permission -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    
+    <!-- WRITE_EXTERNAL_STORAGE deprecated; limit to legacy SDKs only -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
     <!-- Vibration for notifications -->
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -24,6 +31,11 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
+        
+        <!-- تعطيل جمع معرّف الإعلانات -->
+        <meta-data
+            android:name="google_analytics_adid_collection_enabled"
+            android:value="false" />
         
         <!-- FCM Configuration -->
         <meta-data

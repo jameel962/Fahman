@@ -1,8 +1,10 @@
+import 'dart:io' show Platform;
 import 'package:fahman_app/features/auth/veify_email/data/verify_email_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fahman_app/core/networking/errors/exceptions.dart';
 import 'package:fahman_app/core/helpers/cache_helper.dart';
 import 'package:fahman_app/core/networking/api/end_points.dart';
+import 'package:fahman_app/core/services/fcm_service.dart';
 import 'package:fahman_app/app_logger.dart';
 import 'verify_email_state.dart';
 import 'package:fahman_app/core/auth/auth_session.dart';
@@ -25,9 +27,32 @@ class VerifyEmailCubit extends Cubit<VerifyEmailState> {
     emit(state.copyWith(loading: true, error: null));
 
     try {
+      // Get FCM token and device name to attach during verifyOtp
+      String? fcmToken;
+      try {
+        fcmToken = await FCMService().getToken();
+      } catch (_) {
+        fcmToken = null;
+      }
+
+      String? deviceName;
+      try {
+        if (Platform.isAndroid) {
+          deviceName = 'Android';
+        } else if (Platform.isIOS) {
+          deviceName = 'iOS';
+        } else {
+          deviceName = 'Unknown';
+        }
+      } catch (_) {
+        deviceName = 'Unknown';
+      }
+
       final response = await _verifyEmailRepo.verifyOtp(
         otp: state.otp,
         userId: userId,
+        fcmToken: fcmToken,
+        deviceName: deviceName,
       );
       if (response['success'] == true) {
         // Save tokens and userID

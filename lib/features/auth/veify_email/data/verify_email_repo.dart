@@ -8,9 +8,16 @@ class VerifyEmailRepo {
   Future<Map<String, dynamic>> verifyOtp({
     required String otp,
     required String userId,
+    String? fcmToken,
+    String? deviceName,
   }) async {
     try {
-      return await _apiService.verifyOtp(otp: otp, userId: userId);
+      return await _apiService.verifyOtp(
+        otp: otp,
+        userId: userId,
+        fcmToken: fcmToken,
+        deviceName: deviceName,
+      );
     } catch (error) {
       rethrow;
     }

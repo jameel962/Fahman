@@ -16,6 +16,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:dio/dio.dart';
 import 'package:fahman_app/core/networking/api/dio_consumer.dart';
 import 'package:fahman_app/core/networking/api/api_interceptors.dart';
+import 'package:fahman_app/core/services/navigator_service.dart';
 import 'dart:ui' as ui;
 
 class FahmanApp extends StatelessWidget {
@@ -84,6 +85,7 @@ class FahmanApp extends StatelessWidget {
             ),
           ],
           child: MaterialApp(
+            navigatorKey: NavigatorService.navigatorKey,
             debugShowCheckedModeBanner: false,
             locale: context.locale,
             localizationsDelegates: context.localizationDelegates,

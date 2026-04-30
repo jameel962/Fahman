@@ -40,9 +40,9 @@ class AuthCubit extends Cubit<AuthState> {
   final ApiConsumer? _apiConsumer;
 
   AuthCubit({required AuthSession authSession, ApiConsumer? apiConsumer})
-    : _authSession = authSession,
-      _apiConsumer = apiConsumer,
-      super(const AuthState()) {
+      : _authSession = authSession,
+        _apiConsumer = apiConsumer,
+        super(const AuthState()) {
     _loadAuthState();
   }
 
@@ -124,12 +124,13 @@ class AuthCubit extends Cubit<AuthState> {
 
   /// Fetch user profile from server and update local storage
   Future<bool> fetchUserProfile() async {
-    if (_apiConsumer == null) {
+    final apiConsumer = _apiConsumer;
+    if (apiConsumer == null) {
       return false;
     }
 
     try {
-      final profileService = UserProfileService(apiConsumer: _apiConsumer);
+      final profileService = UserProfileService(apiConsumer: apiConsumer);
       final success = await profileService.fetchAndUpdateUserInfo();
 
       if (success) {

@@ -36,7 +36,7 @@ class ConsultationForm extends StatefulWidget {
 
 class ConsultationFormState extends State<ConsultationForm> {
   final TextEditingController _detailsController = TextEditingController();
-  int _maxChars = 250; // الحد الأقصى لعدد الأحرف
+  int _maxChars = 500; // الحد الأقصى لعدد الأحرف
   String? _selectedSectionId;
   final List<XFile> _pickedFiles = [];
   bool _isSubmitting = false;

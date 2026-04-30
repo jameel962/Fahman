@@ -27,6 +27,8 @@ import 'package:fahman_app/features/settings/screens/settings_screen.dart';
 import 'package:fahman_app/features/notifications/notifications_screen.dart';
 import 'package:fahman_app/features/legal_articles/ui/legal_articles_screen.dart';
 import 'package:fahman_app/features/legal_articles/ui/article_comments_screen.dart';
+import 'package:fahman_app/features/legal_articles/ui/article_detail_screen.dart';
+import 'package:fahman_app/core/models/article_response_model.dart';
 import 'package:fahman_app/shared/widgets/privcy.dart';
 import 'package:fahman_app/shared/widgets/terms_condition.dart';
 import 'package:fahman_app/features/consultation/ui/consent_form.dart';
@@ -180,6 +182,12 @@ class AppRouter {
             articleId: args['articleId'] as int,
             articleTitle: args['articleTitle'] as String,
           ),
+          settings: settings,
+        );
+      case Routes.articleDetail:
+        final article = settings.arguments as ArticleResponseModel;
+        return MaterialPageRoute(
+          builder: (_) => ArticleDetailScreen(article: article),
           settings: settings,
         );
       case Routes.privacyPolicy:

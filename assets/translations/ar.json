@@ -299,5 +299,7 @@
   "failed_to_load_document": "فشل تحميل المستند. يرجى التحقق من الاتصال.",
   "unexpected_error_occurred": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
   "no_categories_available": "لا توجد فئات متاحة",
-  "cancel": "إلغاء"
+  "cancel": "إلغاء",
+  "views": "مشاهدة",
+  "media": "الوسائط"
 }

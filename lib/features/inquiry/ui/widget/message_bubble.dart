@@ -16,8 +16,8 @@ class MessageBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bubble = Container(
-      constraints: BoxConstraints(maxWidth: 0.78.sw),
-      padding: EdgeInsets.all(12.w),
+      constraints: BoxConstraints(maxWidth: 0.85.sw),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.08),
         borderRadius: BorderRadius.circular(16.r),

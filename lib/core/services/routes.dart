@@ -20,6 +20,7 @@ class Routes {
   static const String legalArticles = '/legal-articles';
   static const String createArticle = '/create-article';
   static const String articleComments = '/article-comments';
+  static const String articleDetail = '/article-detail';
 
   // Settings routes
   static const String profile = '/profile';

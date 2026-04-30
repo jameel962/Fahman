@@ -122,11 +122,24 @@ class _InquiryScreenState extends State<InquiryScreen> {
     _controller.clear();
     _focusNode.unfocus();
 
+    // Add user message optimistically so it appears immediately
+    setState(() {
+      _messages.add(ChatMessage(text: text, isUser: true));
+      _loadingReply = true;
+    });
+    _scrollToBottom();
+
     // Use cubit to send message - it will handle state and update conversations
     _cubit.sendMessage(message: text, conversationId: _activeConversationId);
   }
 
   void _sendInitialMessage(String message) {
+    // Add user message optimistically
+    setState(() {
+      _messages.add(ChatMessage(text: message, isUser: true));
+      _loadingReply = true;
+    });
+    _scrollToBottom();
     // Send the initial message from voice recording
     _cubit.sendMessage(message: message, conversationId: _activeConversationId);
   }
@@ -187,16 +200,15 @@ class _InquiryScreenState extends State<InquiryScreen> {
         ),
         body: BlocConsumer<InquiryCubit, InquiryState>(
           listener: (context, state) {
-            // Sync loading state
-            _loadingReply = state.isSending || state.isLoadingMessages;
-
             // Sync active conversation ID
             if (state.activeConversationId != null) {
               _activeConversationId = state.activeConversationId;
             }
 
-            // Replace local messages with server messages when available
-            if (state.messages.isNotEmpty) {
+            // When cubit finishes sending (isSending went false) or loads
+            // history, replace local messages with the full server list.
+            // This merges the optimistic user message with the real AI response.
+            if (!state.isSending && state.messages.isNotEmpty) {
               _messages
                 ..clear()
                 ..addAll(
@@ -205,11 +217,23 @@ class _InquiryScreenState extends State<InquiryScreen> {
                         ChatMessage(text: m.content, isUser: m.role == 'user'),
                   ),
                 );
+              _loadingReply = false;
               _scrollToBottom();
+            }
+
+            // If still sending, keep the loading indicator (already set in _send)
+            if (state.isSending) {
+              _loadingReply = true;
+            }
+
+            // When loading messages from history
+            if (state.isLoadingMessages) {
+              _loadingReply = true;
             }
 
             // Show error if any
             if (state.errorMessage != null && state.errorMessage!.isNotEmpty) {
+              _loadingReply = false;
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(state.errorMessage ?? 'An error occurred'),
@@ -269,8 +293,8 @@ class _InquiryScreenState extends State<InquiryScreen> {
                                           : Alignment.centerLeft,
                                       child: MessageBubble(
                                         text: msg.text,
-                                        maxHeight: msg.isUser ? 160.h : 220.h,
-                                        scrollable: !msg.isUser,
+                                        maxHeight: msg.isUser ? 300.h : 400.h,
+                                        scrollable: true,
                                       ),
                                     ),
                                   );
@@ -344,28 +368,37 @@ class _InquiryScreenState extends State<InquiryScreen> {
                                     ),
                                     SizedBox(width: 8.w),
                                     Expanded(
-                                      child: TextField(
-                                        controller: _controller,
-                                        focusNode: _focusNode,
-                                        style: const TextStyle(
-                                          color: Colors.white,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          maxHeight: 120.h,
                                         ),
-                                        textAlign:
-                                            context.locale.languageCode == 'ar'
-                                            ? TextAlign.right
-                                            : TextAlign.left,
-                                        decoration: InputDecoration(
-                                          hintText:
-                                              context.locale.languageCode ==
-                                                  'ar'
-                                              ? 'auth_search_hint'.tr()
-                                              : 'Search your case',
-                                          hintStyle: const TextStyle(
-                                            color: Colors.white70,
+                                        child: TextField(
+                                          controller: _controller,
+                                          focusNode: _focusNode,
+                                          maxLines: null,
+                                          keyboardType: TextInputType.multiline,
+                                          textInputAction:
+                                              TextInputAction.newline,
+                                          style: const TextStyle(
+                                            color: Colors.white,
                                           ),
-                                          border: InputBorder.none,
+                                          textAlign:
+                                              context.locale.languageCode ==
+                                                      'ar'
+                                                  ? TextAlign.right
+                                                  : TextAlign.left,
+                                          decoration: InputDecoration(
+                                            hintText:
+                                                context.locale.languageCode ==
+                                                        'ar'
+                                                    ? 'auth_search_hint'.tr()
+                                                    : 'Search your case',
+                                            hintStyle: const TextStyle(
+                                              color: Colors.white70,
+                                            ),
+                                            border: InputBorder.none,
+                                          ),
                                         ),
-                                        onSubmitted: (_) => _send(),
                                       ),
                                     ),
                                     if (_controller.text.trim().isNotEmpty)

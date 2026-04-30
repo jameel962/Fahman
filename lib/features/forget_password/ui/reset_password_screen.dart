@@ -128,6 +128,11 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<ForgotPasswordCubit, ForgotPasswordState>(
+      listenWhen: (previous, current) {
+        return (current.errorMessage != null &&
+                previous.errorMessage != current.errorMessage) ||
+            (current.passwordReset && !previous.passwordReset);
+      },
       listener: (context, state) {
         // Show error messages
         if (state.errorMessage != null) {

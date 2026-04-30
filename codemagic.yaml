@@ -1,0 +1,52 @@
+workflows:
+  ios-release:
+    name: iOS App Store Release
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+
+    integrations:
+      app_store_connect: Fahman  # name of your API key in Codemagic
+
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.fahman.fahman
+      vars:
+        BUNDLE_ID: "com.fahman.fahman"
+        APP_STORE_APPLE_ID: "T376AXB45S"  # find this in App Store Connect → App → General → Apple ID
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+
+    scripts:
+      - name: Get Flutter packages
+        script: flutter pub get
+
+      - name: Install pods
+        script: |
+          find . -name "Podfile" -execdir pod install \;
+
+      - name: Flutter build IPA
+        script: |
+          BUILD_NUMBER=$(($(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID") + 1))
+          flutter build ipa --release \
+            --build-name=1.0.$BUILD_NUMBER \
+            --build-number=$BUILD_NUMBER \
+            --export-options-plist=/Users/builder/export_options.plist
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - flutter_drive.log
+
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true   # change to false if you want manual TestFlight
+        submit_to_app_store: true   # change to true to auto-submit for App Store review
+      email:
+        recipients:
+          - Jameelalameer4@gmail.com           # your email to get build notifications
+        notify:
+          success: true
+          failure: true

@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:452105787522:android:d22002e2a9e13d6e6cfc9b",
+        "mobilesdk_app_id": "1:452105787522:android:b67ed6f8aee0fb246cfc9b",
         "android_client_info": {
-          "package_name": "com.example.fahman_app"
+          "package_name": "com.fahman.fahman"
         }
       },
       "oauth_client": [],

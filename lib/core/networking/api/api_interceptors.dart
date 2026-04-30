@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:fahman_app/core/auth/auth_session.dart';
 import 'package:fahman_app/core/language/language_service.dart';
 import 'package:fahman_app/core/networking/api/end_points.dart';
+import 'package:fahman_app/core/services/navigator_service.dart';
+import 'package:fahman_app/core/services/routes.dart';
 import 'package:fahman_app/app_logger.dart';
 
 class ApiInterceptor extends Interceptor {
@@ -60,13 +62,39 @@ class ApiInterceptor extends Interceptor {
               return handler.resolve(retryResp);
             } catch (retryErr) {
               AppLogger.e('ApiInterceptor: retry failed', retryErr);
+              // If retry failed, fall-through to next so caller handles error.
+              // Also force logout to force re-login flow.
+              await AuthSession().clear();
+              try {
+                NavigatorService.navigatorKey.currentState
+                    ?.pushNamedAndRemoveUntil(Routes.loginEmail, (r) => false);
+              } catch (_) {}
               return handler.next(err);
             }
           }
         } catch (refreshError) {
           AppLogger.e('ApiInterceptor: token refresh failed', refreshError);
+          // Refresh failed -> clear session and navigate to login
+          await AuthSession().clear();
+          try {
+            NavigatorService.navigatorKey.currentState?.pushNamedAndRemoveUntil(
+              Routes.loginEmail,
+              (r) => false,
+            );
+          } catch (_) {}
           return handler.next(err);
         }
+      } else {
+        // No refresh token available: force logout and navigate to login
+        AppLogger.d('ApiInterceptor: no refresh token -> forcing logout');
+        await AuthSession().clear();
+        try {
+          NavigatorService.navigatorKey.currentState?.pushNamedAndRemoveUntil(
+            Routes.loginEmail,
+            (r) => false,
+          );
+        } catch (_) {}
+        return handler.next(err);
       }
     }
 

@@ -299,5 +299,7 @@
   "failed_to_load_document": "Failed to load document. Please check your connection.",
   "unexpected_error_occurred": "An unexpected error occurred. Please try again.",
   "no_categories_available": "No categories available",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "views": "views",
+  "media": "Media"
 }

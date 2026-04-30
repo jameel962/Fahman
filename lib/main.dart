@@ -5,6 +5,7 @@ import 'package:fahman_app/core/auth/auth_session.dart';
 import 'package:fahman_app/core/helpers/cache_helper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fahman_app/core/services/fcm_service.dart';
+import 'firebase_options.dart';
 import 'fahman_app.dart';
 
 Future<void> main() async {
@@ -15,8 +16,8 @@ Future<void> main() async {
   await CacheHelper.init();
   await AuthSession().init();
 
-  // Initialize Firebase
-  await Firebase.initializeApp();
+  // Initialize Firebase with platform-specific options (Android + iOS)
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // Initialize FCM Service
   print('🚀 Initializing FCM Service...');

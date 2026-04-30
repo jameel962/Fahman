@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fahman_app/features/forget_password/data/forgot_password_repository.dart';
 
@@ -31,6 +32,9 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
 
   // Step 1: Send OTP
   Future<bool> sendOtp() async {
+    // 🔒 Prevent duplicate calls while loading
+    if (state.isLoading) return false;
+
     // Validate email format
     if (state.identifier.trim().isEmpty) {
       emit(state.copyWith(errorMessage: 'auth_email_required'));
@@ -102,6 +106,9 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
 
   // Step 2: Verify OTP
   Future<bool> verifyOtp() async {
+    // 🔒 Prevent duplicate calls while loading
+    if (state.isLoading) return false;
+
     if (state.otp.trim().isEmpty) {
       emit(state.copyWith(errorMessage: 'auth_otp_required'));
       return false;
@@ -170,6 +177,9 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
 
   // Step 3: Reset Password
   Future<bool> resetPassword() async {
+    // 🔒 Prevent duplicate calls while loading
+    if (state.isLoading) return false;
+
     // Validation
     if (state.newPassword.trim().isEmpty) {
       emit(state.copyWith(errorMessage: 'auth_new_password_required'));

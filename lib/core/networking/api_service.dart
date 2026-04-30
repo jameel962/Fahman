@@ -227,13 +227,20 @@ class ApiService {
   Future<Map<String, dynamic>> verifyOtp({
     required String otp,
     required String userId,
+    String? fcmToken,
+    String? deviceName,
   }) async {
     AppLogger.d(
       'ApiService.verifyOtp -> POST ${EndPoints.verifyOtp} ?otp=$otp&userId=$userId',
     );
+    final query = <String, dynamic>{'otp': otp, 'userId': userId};
+    if (fcmToken != null && fcmToken.isNotEmpty) query['fcmToken'] = fcmToken;
+    if (deviceName != null && deviceName.isNotEmpty)
+      query['deviceName'] = deviceName;
+
     final response = await _dio.post(
       EndPoints.verifyOtp,
-      queryParameters: {'otp': otp, 'userId': userId},
+      queryParameters: query,
     );
     AppLogger.d(
       'ApiService.verifyOtp response: ${response.statusCode} ${response.data}',

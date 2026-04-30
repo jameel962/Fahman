@@ -52,6 +52,12 @@ class _ForgotPasswordViewState extends State<_ForgotPasswordView> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ForgotPasswordCubit, ForgotPasswordState>(
+      listenWhen: (previous, current) {
+        // Only listen when otpSent flips from false→true or error appears
+        return (current.otpSent && !previous.otpSent) ||
+            (current.errorMessage != null &&
+                previous.errorMessage != current.errorMessage);
+      },
       listener: (context, state) {
         // Show error messages
         if (state.errorMessage != null) {
@@ -64,13 +70,17 @@ class _ForgotPasswordViewState extends State<_ForgotPasswordView> {
           );
         }
 
-        // Navigate to OTP verification on success
+        // Navigate to OTP verification on success (only fires once)
         if (state.otpSent) {
           Navigator.of(context).pushNamed(
             Routes.verifyOtpPassword,
             arguments: context.read<ForgotPasswordCubit>(),
           );
         }
+      },
+      buildWhen: (previous, current) {
+        // Only rebuild when loading state changes
+        return previous.isLoading != current.isLoading;
       },
       builder: (context, state) {
         return Scaffold(

@@ -1,6 +1,6 @@
 part of 'forgot_password_cubit.dart';
 
-class ForgotPasswordState {
+class ForgotPasswordState extends Equatable {
   final String identifier;
   final String otp;
   final String resetToken;
@@ -25,6 +25,20 @@ class ForgotPasswordState {
     this.otpVerified = false,
     this.passwordReset = false,
   });
+
+  @override
+  List<Object?> get props => [
+    identifier,
+    otp,
+    resetToken,
+    newPassword,
+    confirmPassword,
+    isLoading,
+    errorMessage,
+    otpSent,
+    otpVerified,
+    passwordReset,
+  ];
 
   ForgotPasswordState copyWith({
     String? identifier,

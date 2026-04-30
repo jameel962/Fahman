@@ -23,7 +23,7 @@ class RegisterRepository {
     final response = await apiConsumer.post(
       EndPoints.registerCustomer,
       data: formData,
-      isFormData: true, // This should trigger multipart form data
+      isFormData: true, // multipart form data
     );
     return response as Map<String, dynamic>;
   }
