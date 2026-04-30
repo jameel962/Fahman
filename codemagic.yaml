@@ -13,7 +13,7 @@ workflows:
         bundle_identifier: com.fahman.fahman
       vars:
         BUNDLE_ID: "com.fahman.fahman"
-        APP_STORE_APPLE_ID: "PUT_YOUR_NUMERIC_APPLE_ID_HERE"  # e.g. 6743821905 — found in App Store Connect → App → General → Apple ID
+        APP_STORE_APPLE_ID: "6760599317"  # e.g. 6743821905 — found in App Store Connect → App → General → Apple ID
       flutter: stable
       xcode: latest
       cocoapods: default
