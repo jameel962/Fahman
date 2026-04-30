@@ -5,7 +5,7 @@ workflows:
     instance_type: mac_mini_m2
 
     integrations:
-      app_store_connect: Fahman  # name of your API key in Codemagic
+      app_store_connect: Fahman  # must match the API key name in Codemagic dashboard
 
     environment:
       ios_signing:
@@ -13,7 +13,7 @@ workflows:
         bundle_identifier: com.fahman.fahman
       vars:
         BUNDLE_ID: "com.fahman.fahman"
-        APP_STORE_APPLE_ID: "T376AXB45S"  # find this in App Store Connect → App → General → Apple ID
+        APP_STORE_APPLE_ID: "6760599317"  # e.g. 6743821905 — found in App Store Connect → App → General → Apple ID
       flutter: stable
       xcode: latest
       cocoapods: default
@@ -42,11 +42,11 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-        submit_to_testflight: true   # change to false if you want manual TestFlight
-        submit_to_app_store: true   # change to true to auto-submit for App Store review
+        submit_to_testflight: true
+        submit_to_app_store: false  # keep false until TestFlight is working first
       email:
         recipients:
-          - Jameelalameer4@gmail.com           # your email to get build notifications
+          - Jameelalameer4@gmail.com
         notify:
           success: true
           failure: true
